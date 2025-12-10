@@ -5,10 +5,9 @@
     <title>Chef Yavlen · Private Event Catering Miami</title>
     <meta
       name="description"
-      content="Chef Yavlen offers ultra-refined private event catering in Miami and South Florida: Michelin-inspired private chef dinners, weddings, family celebrations, kids parties, smart buffets and live stations."
+      content="Chef Yavlen – Michelin-style private chef and catering in Miami and South Florida: elegant dinners, modern buffets, weddings and live stations."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <style>
       * {
         box-sizing: border-box;
@@ -16,884 +15,997 @@
         padding: 0;
       }
 
+      :root {
+        --bg: #f7f7fa; /* pearl */
+        --bg-soft: #ffffff;
+        --border-soft: rgba(15, 23, 42, 0.06);
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --accent: #0f766e;
+        --accent-soft: rgba(15, 118, 110, 0.04);
+        --pill: rgba(15, 23, 42, 0.04);
+        --radius-lg: 28px;
+        --radius-md: 18px;
+        --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.08);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        font-family: -apple-system, BlinkMacSystemFont, system-ui,
-          "SF Pro Text", "Segoe UI", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", system-ui, sans-serif;
         background:
-          radial-gradient(circle at top left, #ffffff, #f4f5f9 55%),
-          radial-gradient(circle at bottom right, #fbfbfd, #e7e9f2 55%);
-        color: #111827;
+          radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.95), transparent 55%),
+          radial-gradient(circle at 100% 0%, rgba(209, 213, 219, 0.75), transparent 55%),
+          var(--bg);
+        color: var(--text-main);
         -webkit-font-smoothing: antialiased;
       }
 
       a {
-        color: inherit;
         text-decoration: none;
+        color: inherit;
       }
 
-      main {
-        max-width: 980px;
-        margin: 32px auto 40px;
-        padding: 0 16px 32px;
+      .page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px 40px;
       }
 
       .shell {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 28px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        padding: 26px 22px 30px;
+        width: 100%;
+        max-width: 1100px;
+        background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(249, 250, 251, 0.98)
+          );
+        border-radius: 34px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: var(--shadow-soft);
+        padding: 28px 22px 30px;
+        position: relative;
+        overflow: hidden;
       }
 
-      @media (min-width: 900px) {
-        .shell {
-          padding: 30px 32px 34px;
-        }
+      .shell::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(209, 213, 219, 0.55), transparent 55%),
+          radial-gradient(circle at 90% 20%, rgba(226, 232, 240, 0.7), transparent 55%);
+        opacity: 0.4;
+        pointer-events: none;
       }
 
-      /* HEADER / BRAND */
+      .content {
+        position: relative;
+        z-index: 1;
+      }
 
-      .top-row {
+      /* Top bar */
+
+      .topbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 26px;
+        margin-bottom: 18px;
+        gap: 10px;
       }
 
-      .brand-name {
-        font-family: "Georgia", "Times New Roman", serif;
-        font-size: 18px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #111827;
-      }
-
-      .brand-sub {
-        font-size: 11px;
-        letter-spacing: 0.18em;
+      .brand-mark {
+        font-size: 13px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #9ca3af;
-        margin-top: 2px;
       }
 
-      .chip-location {
-        padding: 4px 14px;
-        border-radius: 999px;
-        border: 1px solid rgba(209, 213, 219, 0.9);
-        background: rgba(249, 250, 251, 0.96);
+      .badge-region {
         font-size: 11px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
         color: #4b5563;
         white-space: nowrap;
       }
 
-      /* HERO — максимально минималистичный */
+      /* Layout */
 
-      .hero {
+      .grid-main {
         display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
         gap: 24px;
-        align-items: flex-start;
-        margin-bottom: 28px;
       }
 
-      @media (max-width: 820px) {
-        .hero {
-          grid-template-columns: 1fr;
-          gap: 18px;
+      @media (max-width: 860px) {
+        .shell {
+          padding: 22px 16px 26px;
+          border-radius: 26px;
+        }
+
+        .grid-main {
+          grid-template-columns: minmax(0, 1fr);
         }
       }
 
-      .hero-main {
-        max-width: 520px;
-      }
+      /* HERO LEFT */
 
-      .hero-title {
-        font-family: "Georgia", "Times New Roman", serif;
-        font-size: 30px;
-        line-height: 1.2;
-        font-weight: 500;
-        margin-bottom: 10px;
-        color: #111827;
-      }
-
-      @media (min-width: 900px) {
-        .hero-title {
-          font-size: 34px;
-        }
-      }
-
-      .hero-sub {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #4b5563;
-        margin-bottom: 10px;
-      }
-
-      .hero-soft {
+      .eyebrow {
         font-size: 12px;
-        color: #6b7280;
-        margin-bottom: 20px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 6px;
+      }
+
+      h1 {
+        font-size: 32px;
+        line-height: 1.12;
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 640px) {
+        h1 {
+          font-size: 26px;
+        }
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: var(--text-muted);
+        max-width: 440px;
+        margin-bottom: 14px;
+      }
+
+      .tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .tag-pill {
+        border-radius: 999px;
+        background: var(--pill);
+        padding: 6px 11px;
+        font-size: 11px;
+        color: #4b5563;
+        border: 1px solid rgba(148, 163, 184, 0.5);
       }
 
       .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-bottom: 10px;
-      }
-
-      .btn-primary,
-      .btn-secondary,
-      .btn-ghost {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        border-radius: 999px;
-        font-size: 14px;
-        cursor: pointer;
-        border: 1px solid transparent;
-        transition: transform 0.12s ease, box-shadow 0.12s ease,
-          background-color 0.12s ease, border-color 0.12s ease;
+        margin-bottom: 12px;
       }
 
       .btn-primary {
-        padding: 9px 18px;
-        background: linear-gradient(135deg, #16a34a, #22c55e);
-        color: #f9fafb;
-        font-weight: 500;
-        border-color: rgba(22, 163, 74, 0.9);
+        padding: 11px 18px;
+        border-radius: 999px;
+        border: none;
+        background: radial-gradient(circle at 20% 0%, #ecfdf5, #059669);
+        color: #022c22;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 14px 35px rgba(22, 163, 74, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
       }
 
-      .btn-primary:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 18px 38px rgba(22, 163, 74, 0.35);
+      .btn-outline {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #374151;
       }
 
-      .btn-secondary {
-        padding: 8px 16px;
-        border-color: rgba(209, 213, 219, 0.95);
-        background: rgba(249, 250, 251, 0.96);
-        color: #111827;
-      }
-
-      .btn-secondary:hover {
-        background: #f3f4f6;
-      }
-
-      .btn-ghost {
-        padding: 8px 14px;
-        border-color: transparent;
-        background: transparent;
-        font-size: 13px;
-        color: #6b7280;
-      }
-
-      .btn-ghost:hover {
-        background: rgba(243, 244, 246, 0.7);
-        border-color: rgba(229, 231, 235, 0.9);
-      }
-
-      .btn-icon {
-        font-size: 16px;
-      }
-
-      .hero-note {
-        font-size: 12px;
+      .helper-text {
+        font-size: 11px;
         color: #9ca3af;
       }
 
-      /* HERO — правый тихий блок */
+      /* Signature card */
 
-      .hero-side {
-        border-radius: 20px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #ffffff;
-        padding: 14px 14px 16px;
+      .signature {
+        margin-top: 22px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-soft);
+        background: radial-gradient(circle at 0% 0%, #f9fafb, #ffffff);
+        padding: 14px 14px 13px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      @media (max-width: 640px) {
+        .signature {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .signature-heading {
         font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .signature-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .signature-text {
+        font-size: 12px;
+        color: #6b7280;
+      }
+
+      .signature-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .signature-pill {
+        font-size: 11px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
+        background: rgba(249, 250, 251, 0.9);
+      }
+
+      .signature-photo {
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        overflow: hidden;
+        width: 88px;
+        height: 88px;
+        margin-left: auto;
+      }
+
+      .signature-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* RIGHT: CONTACT CARD */
+
+      .contact-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(255, 255, 255, 0.96);
+        padding: 16px 16px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .contact-line {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .contact-main {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .contact-email {
+        font-size: 13px;
+        color: #374151;
+      }
+
+      .contact-note {
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      .geo-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .geo-pill {
+        padding: 5px 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
+        background: rgba(249, 250, 251, 0.95);
+        font-size: 11px;
         color: #4b5563;
       }
 
-      .hero-side-label {
-        font-size: 11px;
+      /* SECTION TITLE */
+
+      .section-title {
+        margin-top: 26px;
+        font-size: 12px;
         letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 10px;
+      }
+
+      /* FORMATS GRID */
+
+      .formats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      @media (max-width: 860px) {
+        .formats-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .format-card {
+        border-radius: var(--radius-md);
+        padding: 13px 13px 12px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      .format-label {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        margin-bottom: 4px;
+      }
+
+      .format-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .format-text {
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 5px;
+      }
+
+      .format-meta {
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      /* LIVE STATIONS */
+
+      .stations {
+        margin-top: 16px;
+        border-radius: var(--radius-md);
+        padding: 13px 13px 11px;
+        border: 1px dashed rgba(148, 163, 184, 0.8);
+        background: rgba(248, 250, 252, 0.9);
+      }
+
+      .stations-title {
+        font-size: 12px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #9ca3af;
         margin-bottom: 6px;
       }
 
-      .hero-side-main {
-        font-size: 14px;
-        font-weight: 500;
-        color: #111827;
-        margin-bottom: 8px;
+      .stations-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
       }
 
-      .hero-side-list {
-        margin-top: 6px;
-        list-style: none;
-      }
-
-      .hero-side-list li {
-        margin-bottom: 4px;
-      }
-
-      /* SECTION HEADINGS */
-
-      .section-title {
-        margin-top: 24px;
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 10px;
-      }
-
-      /* FORMATS */
-
-      .format-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      @media (min-width: 900px) {
-        .format-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      .format-card {
-        border-radius: 18px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #ffffff;
-        padding: 12px 13px 14px;
-      }
-
-      .format-label {
+      .station-pill {
         font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: #9ca3af;
-        margin-bottom: 4px;
-      }
-
-      .format-name {
-        font-size: 14px;
-        font-weight: 500;
-        color: #111827;
-        margin-bottom: 4px;
-      }
-
-      .format-text {
-        font-size: 13px;
-        color: #4b5563;
-        line-height: 1.55;
-      }
-
-      .format-foot {
-        font-size: 12px;
-        color: #6b7280;
-        margin-top: 4px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.04);
+        border: 1px solid rgba(209, 213, 219, 0.9);
+        color: #374151;
       }
 
       /* GALLERY */
 
-      .gallery {
-        margin-top: 20px;
+      .gallery-wrap {
+        margin-top: 22px;
       }
 
-      .gallery-head {
+      .gallery-header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        gap: 8px;
+        gap: 10px;
         margin-bottom: 8px;
       }
 
-      .gallery-label {
+      .gallery-title {
         font-size: 12px;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
         color: #9ca3af;
       }
 
-      .gallery-hint {
+      .gallery-sub {
         font-size: 11px;
         color: #9ca3af;
       }
 
-      .gallery-track {
+      .gallery-row {
         display: flex;
         gap: 10px;
         overflow-x: auto;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
+        padding-bottom: 2px;
+        scrollbar-width: none;
       }
 
-      .gallery-item {
-        min-width: 220px;
-        max-width: 260px;
-        border-radius: 18px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #ffffff;
+      .gallery-row::-webkit-scrollbar {
+        display: none;
+      }
+
+      .gallery-card {
+        min-width: 200px;
+        max-width: 220px;
+        background: var(--bg-soft);
+        border-radius: 20px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
         overflow: hidden;
         flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
       }
 
-      .gallery-img {
+      .gallery-card img {
         width: 100%;
         height: 150px;
         object-fit: cover;
         display: block;
       }
 
-      .gallery-body {
-        padding: 8px 10px 10px;
-        font-size: 12px;
-        color: #4b5563;
-      }
-
       .gallery-caption {
-        font-weight: 500;
-        color: #111827;
-        margin-bottom: 2px;
-      }
-
-      /* INFO BLOCKS */
-
-      .info-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-        gap: 16px;
-        margin-top: 20px;
-      }
-
-      @media (max-width: 820px) {
-        .info-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .info-block {
-        border-radius: 18px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #ffffff;
-        padding: 12px 13px 14px;
-        font-size: 13px;
-        color: #4b5563;
-      }
-
-      .info-heading {
-        font-size: 14px;
-        font-weight: 500;
-        margin-bottom: 6px;
-        color: #111827;
-      }
-
-      .info-small {
-        font-size: 12px;
-        color: #6b7280;
-        margin-bottom: 6px;
-      }
-
-      .steps {
-        margin-top: 4px;
-        font-size: 13px;
-        padding-left: 16px;
-      }
-
-      .steps li {
-        margin-bottom: 4px;
-      }
-
-      .area-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 6px;
-      }
-
-      .area-tag {
+        padding: 9px 10px 9px;
         font-size: 11px;
-        padding: 4px 9px;
-        border-radius: 999px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #f9fafb;
+        color: #4b5563;
       }
 
       /* CONTACT SECTION */
 
       .contact-section {
         margin-top: 26px;
-        border-radius: 20px;
-        border: 1px solid rgba(229, 231, 235, 0.9);
-        background: #ffffff;
-        padding: 16px 14px 18px;
-      }
-
-      .contact-grid {
+        border-top: 1px solid rgba(229, 231, 235, 0.9);
+        padding-top: 18px;
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-        gap: 16px;
+        gap: 18px;
       }
 
-      @media (max-width: 820px) {
-        .contact-grid {
-          grid-template-columns: 1fr;
+      @media (max-width: 860px) {
+        .contact-section {
+          grid-template-columns: minmax(0, 1fr);
         }
       }
 
-      .contact-title {
-        font-size: 16px;
-        font-weight: 500;
+      .contact-copy-title {
+        font-size: 14px;
+        font-weight: 600;
         margin-bottom: 6px;
-        color: #111827;
       }
 
-      .contact-text {
-        font-size: 13px;
-        color: #4b5563;
-        margin-bottom: 8px;
-      }
-
-      .contact-mini {
+      .contact-copy-text {
         font-size: 12px;
         color: #6b7280;
         margin-bottom: 8px;
       }
 
-      .contact-line {
-        font-size: 13px;
-        color: #111827;
+      .contact-copy-list {
+        font-size: 11px;
+        color: #9ca3af;
+        list-style: none;
       }
 
-      .contact-line span {
-        color: #6b7280;
+      .contact-copy-list li {
+        margin-bottom: 3px;
       }
 
       form {
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        background: rgba(248, 250, 252, 0.9);
+        border-radius: 20px;
+        padding: 12px 12px 12px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
+      }
+
+      @media (max-width: 640px) {
+        form {
+          grid-template-columns: minmax(0, 1fr);
+        }
       }
 
       .field {
-        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 11px;
       }
 
       .field label {
-        display: block;
-        font-size: 12px;
-        margin-bottom: 4px;
-        color: #4b5563;
+        color: #6b7280;
       }
 
       .field input,
+      .field select,
       .field textarea {
-        width: 100%;
         border-radius: 999px;
         border: 1px solid rgba(209, 213, 219, 0.9);
-        padding: 9px 12px;
-        font-size: 13px;
+        padding: 7px 10px;
+        font-size: 12px;
+        background: #ffffff;
         outline: none;
-        background: #f9fafb;
       }
 
       .field textarea {
         border-radius: 14px;
+        min-height: 70px;
         resize: vertical;
-        min-height: 80px;
+        padding-top: 7px;
       }
 
       .field input:focus,
+      .field select:focus,
       .field textarea:focus {
-        border-color: #60a5fa;
-        box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35);
-        background: #ffffff;
+        border-color: #0f766e;
+        box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.3);
       }
 
-      .submit-row {
-        margin-top: 8px;
-        display: flex;
-        justify-content: flex-end;
+      .field-full {
+        grid-column: 1 / -1;
       }
+
+      .submit-wrap {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 2px;
+      }
+
+      .submit-note {
+        font-size: 10px;
+        color: #9ca3af;
+      }
+
+      .btn-submit {
+        padding: 9px 16px;
+        border-radius: 999px;
+        border: none;
+        background: #111827;
+        color: white;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-submit:hover {
+        opacity: 0.95;
+      }
+
+      /* FOOTER */
 
       .footer {
-        margin-top: 20px;
-        font-size: 11px;
+        margin-top: 18px;
+        font-size: 10px;
         color: #9ca3af;
-        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: space-between;
       }
 
-      @media (max-width: 720px) {
-        main {
-          margin-top: 18px;
-        }
-
-        .shell {
-          padding: 20px 16px 24px;
-          border-radius: 22px;
-        }
+      .footer a {
+        text-decoration: underline;
       }
     </style>
   </head>
-
   <body>
-    <main>
+    <div class="page">
       <div class="shell">
-        <!-- HEADER -->
-        <header class="top-row">
-          <div>
-            <div class="brand-name">CHEF YAVLEN</div>
-            <div class="brand-sub">PRIVATE EVENT CATERING</div>
-          </div>
-          <div class="chip-location">Miami · South Florida</div>
-        </header>
-
-        <!-- HERO -->
-        <section class="hero">
-          <div class="hero-main">
-            <h1 class="hero-title">
-              Private catering with a Michelin-level mindset.
-            </h1>
-            <p class="hero-sub">
-              Intimate dinners, weddings, family celebrations, kids parties, smart
-              buffets and live stations — created on-site by Chef Yavlen in Miami and
-              South Florida.
-            </p>
-            <p class="hero-soft">
-              A quiet, detail-obsessed approach: few dishes, high precision, clean
-              flavors and a kitchen left exactly as we found it.
-            </p>
-
-            <div class="cta-row">
-              <a href="#request" class="btn-primary">
-                <span class="btn-icon">✦</span>
-                Request an event
-              </a>
-              <a href="tel:+17549713012" class="btn-secondary">
-                <span class="btn-icon">📞</span>
-                Call
-              </a>
-              <a
-                href="https://wa.me/17546101359"
-                target="_blank"
-                class="btn-secondary"
-              >
-                <span class="btn-icon">💬</span>
-                WhatsApp
-              </a>
-            </div>
-
-            <p class="hero-note">
-              Share the date, city and number of guests — you’ll receive 2–3 menu
-              directions and a clear quote the same day.
-            </p>
+        <div class="content">
+          <!-- TOP BAR -->
+          <div class="topbar">
+            <div class="brand-mark">Chef Yavlen · Private Event Catering</div>
+            <div class="badge-region">Miami · South Florida</div>
           </div>
 
-          <aside class="hero-side">
-            <div class="hero-side-label">Signature by Chef Yavlen</div>
-            <div class="hero-side-main">
-              Few dishes. Maximum attention to each plate.
-            </div>
-            <p>
-              15+ years in professional kitchens, international hotels and private
-              homes. Now focused on calm, precise private events in South Florida.
-            </p>
-            <ul class="hero-side-list">
-              <li>• Private chef dinners (2–20 guests)</li>
-              <li>• Events & weddings (up to ~200)</li>
-              <li>• Kids & teen menus without fast-food feeling</li>
-              <li>• Villas, penthouses, yachts, hidden venues</li>
-            </ul>
-          </aside>
-        </section>
-
-        <!-- FORMATS -->
-        <h2 class="section-title">Formats</h2>
-        <section class="format-grid">
-          <article class="format-card">
-            <div class="format-label">Dinners</div>
-            <div class="format-name">Private chef dinners · 2–20 guests</div>
-            <p class="format-text">
-              Calm, focused dinners in your home or villa. Tasting menu or family-style
-              sharing, designed around your guests and wine.
-            </p>
-            <p class="format-foot">Perfect for anniversaries, small celebrations and VIP guests.</p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Events & weddings</div>
-            <div class="format-name">Buffet & cocktail receptions</div>
-            <p class="format-text">
-              Clean, modern buffets and canapés for weddings, engagements, corporate
-              events and brand launches — without the “banquet” feeling.
-            </p>
-            <p class="format-foot">Tailored menus for events up to around 200 guests.</p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Kids & family</div>
-            <div class="format-name">Kids & teen parties</div>
-            <p class="format-text">
-              Food that looks fun and still respects quality. Lighter, colorful menus
-              that children and teens actually eat.
-            </p>
-            <p class="format-foot">Birthdays, pool days, family weekends and camps.</p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Daytime</div>
-            <div class="format-name">Smart buffet</div>
-            <p class="format-text">
-              Bowls, salads and refined appetizers with seasonal products and clean
-              flavors — ideal for daytime events and offsites.
-            </p>
-            <p class="format-foot">
-              We leave your kitchen and service area exactly as we found them.
-            </p>
-          </article>
-        </section>
-
-        <!-- LIVE STATIONS -->
-        <h2 class="section-title">Live Stations</h2>
-        <section class="format-grid">
-          <article class="format-card">
-            <div class="format-label">Spanish Jamón</div>
-            <div class="format-name">Spanish Jamón Carving Station</div>
-            <p class="format-text">
-              Whole leg of jamón carved quietly in front of your guests. Thin slices
-              served with good bread, olive oil and simple accompaniments.
-            </p>
-            <p class="format-foot">A subtle showpiece for weddings and evening drinks.</p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Raw bar</div>
-            <div class="format-name">Oysters on Ice · Raw Bar</div>
-            <p class="format-text">
-              Oysters shucked to order on ice, with classic mignonette, lemon and a few
-              carefully chosen condiments.
-            </p>
-            <p class="format-foot">
-              Can be extended with shrimp, ceviche shots or other chilled seafood.
-            </p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Grill</div>
-            <div class="format-name">BBQ Skewers · Live Grill Station</div>
-            <p class="format-text">
-              Live charcoal or gas grilling of skewers: beef, poultry, seafood and
-              vegetables. Marinades inspired by Latin and Mediterranean flavors.
-            </p>
-            <p class="format-foot">
-              Works especially well by the pool, on decks and rooftops.
-            </p>
-          </article>
-
-          <article class="format-card">
-            <div class="format-label">Ceviche</div>
-            <div class="format-name">Ceviche Station</div>
-            <p class="format-text">
-              Ceviche prepared in front of guests with fresh seafood, citrus, herbs and
-              texture. Guests choose level of heat and style.
-            </p>
-            <p class="format-foot">
-              A bright, restrained way to add “Miami” to the menu.
-            </p>
-          </article>
-        </section>
-
-        <!-- GALLERY -->
-        <section class="gallery">
-          <div class="gallery-head">
-            <div class="gallery-label">Gallery · Selected work</div>
-            <div class="gallery-hint">Scroll sideways</div>
-          </div>
-
-          <div class="gallery-track">
-            <article class="gallery-item">
-              <img
-                src="images/images/IMG_5737.jpeg"
-                alt="Live grilling station by Chef Yavlen"
-                class="gallery-img"
-              />
-              <div class="gallery-body">
-                <div class="gallery-caption">Live grilling</div>
-                <div>Outdoor events and poolside dinners.</div>
-              </div>
-            </article>
-
-            <article class="gallery-item">
-              <img
-                src="images/images/IMG_3066.jpeg"
-                alt="Smart buffet setup"
-                class="gallery-img"
-              />
-              <div class="gallery-body">
-                <div class="gallery-caption">Smart buffet</div>
-                <div>Clean, organized lines instead of chaos.</div>
-              </div>
-            </article>
-
-            <article class="gallery-item">
-              <img
-                src="images/images/IMG_0503.jpeg"
-                alt="Plated dish by Chef Yavlen"
-                class="gallery-img"
-              />
-              <div class="gallery-body">
-                <div class="gallery-caption">Plated course</div>
-                <div>Restaurant-style plating in a private home.</div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ABOUT + HOW IT WORKS + AREA -->
-        <section class="info-grid">
-          <article class="info-block">
-            <div class="info-heading">About Chef Yavlen</div>
-            <p>
-              Private chef and caterer based in Miami, working with families, guests and
-              companies who prefer calm, precise service over noise.
-            </p>
-            <p class="info-small">
-              15+ years in professional kitchens, including international hotels and
-              private homes. The focus today is on intimate events, live stations and
-              modern buffets in South Florida.
-            </p>
-          </article>
-
-          <article class="info-block">
-            <div class="info-heading">How it works</div>
-            <p class="info-small">A short, clear process.</p>
-            <ol class="steps">
-              <li><strong>1.</strong> Share date, city, number of guests and format.</li>
-              <li><strong>2.</strong> Receive 2–3 menu directions and a transparent quote.</li>
-              <li><strong>3.</strong> On the day, we arrive with products and equipment, work quietly and leave the kitchen spotless.</li>
-            </ol>
-          </article>
-        </section>
-
-        <section class="info-grid">
-          <article class="info-block">
-            <div class="info-heading">Service area</div>
-            <p class="info-small">Miami and South Florida villas, homes and venues.</p>
-            <div class="area-tags">
-              <span class="area-tag">Miami & Miami Beach</span>
-              <span class="area-tag">Aventura</span>
-              <span class="area-tag">Sunny Isles</span>
-              <span class="area-tag">Bal Harbour</span>
-              <span class="area-tag">Boca Raton</span>
-              <span class="area-tag">Palm Beach</span>
-            </div>
-          </article>
-
-          <article class="info-block">
-            <div class="info-heading">Pricing & minimums</div>
-            <p>
-              Each event is priced individually based on menu, staffing, live stations
-              and logistics. All quotes are itemized and clear.
-            </p>
-            <p class="info-small">
-              Minimums depend on date and format. High-season and holidays tend to book
-              out early.
-            </p>
-          </article>
-        </section>
-
-        <!-- CONTACT + FORM (FORMSUBMIT) -->
-        <section class="contact-section" id="request">
-          <div class="contact-grid">
+          <!-- MAIN GRID -->
+          <div class="grid-main">
+            <!-- LEFT -->
             <div>
-              <div class="contact-title">Tell us about your event</div>
-              <p class="contact-text">
-                A short message is enough to start: date, city, number of guests and the
-                feeling you want.
+              <div class="eyebrow">Private event catering</div>
+              <h1>Private catering that feels like a Michelin dinner at home.</h1>
+              <p class="subtitle">
+                Elevated, chef-driven menus for intimate dinners, modern weddings and
+                smart buffet events – cooked live on site in your kitchen or venue.
               </p>
-              <p class="contact-mini">Typical response time: within a few hours.</p>
 
-              <p class="contact-line">
-                <span>Phone / WhatsApp:</span> +1 (754) 971-3012
-              </p>
-              <p class="contact-line">
-                <span>Email:</span> private.event.catering13@gmail.com
-              </p>
+              <div class="tags-row">
+                <div class="tag-pill">Tasting menus · 2–20 guests</div>
+                <div class="tag-pill">Events &amp; weddings up to 200 guests</div>
+                <div class="tag-pill">Healthy kids &amp; teen menus</div>
+              </div>
+
+              <div class="cta-row">
+                <a href="#contact" class="btn-primary">
+                  Request a quote
+                  <span>↗</span>
+                </a>
+                <a href="#contact" class="btn-outline">
+                  Book a tasting
+                </a>
+              </div>
+              <div class="helper-text">
+                Share the date, city and number of guests — you’ll receive 2–3 menu
+                options and a detailed estimate the same day.
+              </div>
+
+              <!-- SIGNATURE EXPERIENCE -->
+              <div class="signature">
+                <div>
+                  <div class="signature-heading">Signature experience</div>
+                  <div class="signature-title">
+                    Tasting menu cooked live for you and your guests.
+                  </div>
+                  <p class="signature-text">
+                    Miami-based private chef with more than 15 years of experience in
+                    luxury hotels and private homes worldwide. Minimalistic plating,
+                    seasonal products and restaurant-level service.
+                  </p>
+                  <div class="signature-meta">
+                    <div class="signature-pill">Plated tasting menus</div>
+                    <div class="signature-pill">Family-style sharing</div>
+                    <div class="signature-pill">Kids &amp; teen parties</div>
+                  </div>
+                </div>
+                <div class="signature-photo" aria-hidden="true">
+                  <!-- main portrait -->
+                  <img
+                    src="images/images/622c0a05-d55c-445b-8d7f-ab6f40b40b02.jpeg"
+                    alt="Chef Yavlen at a private event"
+                  />
+                </div>
+              </div>
             </div>
 
-            <form
-              action="https://formsubmit.co/private.event.catering13@gmail.com"
-              method="POST"
-            >
-              <!-- FormSubmit settings -->
+            <!-- RIGHT: CONTACT CARD -->
+            <div class="contact-card">
+              <div class="contact-line">Available 7 days a week</div>
+              <div class="contact-main">Miami · Aventura · Sunny Isles · Boca</div>
+              <div class="contact-email">
+                Email:
+                <a href="mailto:private.event.catering13@gmail.com">
+                  private.event.catering13@gmail.com
+                </a>
+              </div>
+              <div class="contact-line">
+                For urgent requests you can also call or text after submitting the form:
+              </div>
+              <div class="geo-row">
+                <div class="geo-pill">
+                  📞 +1 (754) 971-3012
+                </div>
+                <div class="geo-pill">
+                  💬 WhatsApp: +1 (754) 610-1359
+                </div>
+              </div>
+              <div class="contact-note">
+                All inquiries from this site go directly to the chef — no middlemen.
+              </div>
+            </div>
+          </div>
+
+          <!-- FORMATS -->
+          <div class="section-title">Formats</div>
+          <div class="formats-grid">
+            <div class="format-card">
+              <div class="format-label">Dinners · 2–20 guests</div>
+              <div class="format-title">Private chef dinners</div>
+              <p class="format-text">
+                Multi-course tasting menus or elegant family-style dinners. Perfect
+                for anniversaries, celebrations and VIP guests.
+              </p>
+              <div class="format-meta">
+                Wine-friendly menus, seasonal products, restaurant-level plating.
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-label">Events &amp; weddings · up to 200 guests</div>
+              <div class="format-title">Buffet &amp; cocktail receptions</div>
+              <p class="format-text">
+                Elegant canapés, live stations and grazing tables for weddings,
+                engagement parties, corporate events and brand activations.
+              </p>
+              <div class="format-meta">
+                Full menu planning, staffing support and rental coordination.
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-label">Kids &amp; family</div>
+              <div class="format-title">Healthy kids &amp; teen parties</div>
+              <p class="format-text">
+                Colorful, Instagram-worthy food that kids actually eat: balanced menus
+                without the heavy fast-food feeling.
+              </p>
+              <div class="format-meta">
+                Birthdays, pool parties, family weekends and camps.
+              </div>
+            </div>
+
+            <div class="format-card">
+              <div class="format-label">Smart buffet</div>
+              <div class="format-title">Light, fresh &amp; beautiful catering</div>
+              <p class="format-text">
+                Seasonal bowls, salads and appetizers with a focus on clean flavors
+                and quality ingredients — ideal for daytime events.
+              </p>
+              <div class="format-meta">
+                We leave your kitchen exactly as we found it. Sometimes cleaner.
+              </div>
+            </div>
+          </div>
+
+          <!-- LIVE STATIONS -->
+          <div class="stations">
+            <div class="stations-title">Live stations</div>
+            <div class="stations-list">
+              <div class="station-pill">Spanish Jamón Carving Station</div>
+              <div class="station-pill">Oysters on Ice – Raw Bar</div>
+              <div class="station-pill">BBQ Skewers – Live Grill Station</div>
+              <div class="station-pill">Ceviche Station</div>
+            </div>
+          </div>
+
+          <!-- GALLERY -->
+          <div class="gallery-wrap">
+            <div class="gallery-header">
+              <div class="gallery-title">Gallery · Real events by Chef Yavlen</div>
+              <div class="gallery-sub">Scroll sideways to see more photos</div>
+            </div>
+            <div class="gallery-row">
+              <div class="gallery-card">
+                <img
+                  src="images/images/IMG_3066.jpeg"
+                  alt="Detail of plating by Chef Yavlen"
+                />
+                <div class="gallery-caption">
+                  Precise details and modern plating at a private dinner.
+                </div>
+              </div>
+              <div class="gallery-card">
+                <img
+                  src="images/images/IMG_0987.jpeg"
+                  alt="Elegant seafood canapés"
+                />
+                <div class="gallery-caption">
+                  Bright canapés on custom displays for waterfront events.
+                </div>
+              </div>
+              <div class="gallery-card">
+                <img
+                  src="images/images/IMG_5737.jpeg"
+                  alt="Prosciutto and cheese skewers"
+                />
+                <div class="gallery-caption">
+                  Spanish-inspired bites with jamón, cheese and microgreens.
+                </div>
+              </div>
+              <div class="gallery-card">
+                <img
+                  src="images/images/ShelbyHB-0031_Original.jpeg"
+                  alt="Colorful buffet table"
+                />
+                <div class="gallery-caption">
+                  Smart buffet setup with seasonal salads and fruit.
+                </div>
+              </div>
+              <div class="gallery-card">
+                <img
+                  src="images/images/ShelbyHB-0349_Original.jpeg"
+                  alt="Chef Yavlen at an outdoor event"
+                />
+                <div class="gallery-caption">
+                  Chef Yavlen behind the scenes at an outdoor private event.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTACT SECTION -->
+          <div id="contact" class="contact-section">
+            <div>
+              <div class="contact-copy-title">
+                Share your event details — receive a tailored proposal today.
+              </div>
+              <p class="contact-copy-text">
+                Please fill in the form and we will come back with 2–3 menu ideas and
+                a transparent quote, adjusted to your preferences and kitchen.
+              </p>
+              <ul class="contact-copy-list">
+                <li>• Dinners from 2 guests, events up to ~200 guests</li>
+                <li>• Miami, South Florida and selected destinations upon request</li>
+                <li>• Full service: menu, groceries, staff, rentals &amp; clean up</li>
+              </ul>
+            </div>
+
+            <!-- FORM (Web3Forms) -->
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <!-- IMPORTANT: replace YOUR_ACCESS_KEY with your key from web3forms.com -->
               <input
                 type="hidden"
-                name="_subject"
-                value="New catering request from Chef Yavlen website"
+                name="access_key"
+                value="YOUR_ACCESS_KEY"
               />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="subject"
+                value="New catering inquiry from website"
+              />
+              <input
+                type="hidden"
+                name="from_name"
+                value="Chef Yavlen Website"
+              />
 
               <div class="field">
-                <label for="name">Full name *</label>
+                <label for="first-name">First name*</label>
                 <input
-                  id="name"
-                  name="name"
+                  id="first-name"
                   type="text"
-                  placeholder="Name and last name"
+                  name="first_name"
                   required
-                  autocomplete="name"
+                  autocomplete="given-name"
+                />
+              </div>
+              <div class="field">
+                <label for="last-name">Last name*</label>
+                <input
+                  id="last-name"
+                  type="text"
+                  name="last_name"
+                  required
+                  autocomplete="family-name"
                 />
               </div>
 
               <div class="field">
-                <label for="email">Email *</label>
+                <label for="email">Email*</label>
                 <input
                   id="email"
-                  name="email"
                   type="email"
-                  placeholder="your@email.com"
+                  name="email"
                   required
                   autocomplete="email"
                 />
               </div>
-
               <div class="field">
-                <label for="phone">Phone / WhatsApp *</label>
+                <label for="phone">Phone (WhatsApp preferred)*</label>
                 <input
                   id="phone"
-                  name="phone"
                   type="tel"
-                  placeholder="+1 (___) ___-____"
+                  name="phone"
                   required
                   autocomplete="tel"
                 />
               </div>
 
               <div class="field">
-                <label for="details">Event details *</label>
+                <label for="event-type">Event type</label>
+                <select id="event-type" name="event_type">
+                  <option value="">Choose…</option>
+                  <option>Private dinner</option>
+                  <option>Wedding / reception</option>
+                  <option>Birthday / anniversary</option>
+                  <option>Corporate / brand event</option>
+                  <option>Kids / teen party</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="guests">Approx. number of guests</label>
+                <input
+                  id="guests"
+                  type="number"
+                  min="1"
+                  name="guests"
+                  placeholder="e.g. 12, 60, 150"
+                />
+              </div>
+
+              <div class="field">
+                <label for="date">Event date</label>
+                <input id="date" type="date" name="date" />
+              </div>
+
+              <div class="field">
+                <label for="location">City / neighborhood</label>
+                <input
+                  id="location"
+                  type="text"
+                  name="location"
+                  placeholder="Miami Beach, Bal Harbour, Boca Raton…"
+                />
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Anything else we should know?</label>
                 <textarea
-                  id="details"
-                  name="details"
-                  placeholder="Date, city, number of guests, format (dinner, wedding, kids party, live stations)..."
-                  required
+                  id="message"
+                  name="message"
+                  placeholder="Style of event, preferred cuisine, dietary needs, budget range…"
                 ></textarea>
               </div>
 
-              <div class="submit-row">
-                <button type="submit" class="btn-primary">
-                  Send & receive menu ideas
+              <div class="submit-wrap">
+                <button type="submit" class="btn-submit">
+                  Send request
                 </button>
+                <div class="submit-note">
+                  Your details will only be used to contact you about this event. No
+                  newsletters, no spam.
+                </div>
               </div>
             </form>
           </div>
-        </section>
 
-        <p class="footer">
-          Chef Yavlen · Private Event Catering Miami · Available 7 days a week in Miami & South Florida.
-        </p>
+          <!-- FOOTER -->
+          <div class="footer">
+            <div>
+              ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              Chef Yavlen · Private Event Catering Miami.
+            </div>
+            <div>
+              Instagram:
+              <a
+                href="https://www.instagram.com/private_event_catering"
+                target="_blank"
+                rel="noreferrer"
+                >@private_event_catering</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
   </body>
 </html>
