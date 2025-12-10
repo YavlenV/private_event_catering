@@ -5,7 +5,7 @@
     <title>Private Event Catering Miami | Chef Vladimir Yavlen</title>
     <meta
       name="description"
-      content="Private Event Catering in Miami by Chef Vladimir Yavlen. Michelin-style private chef dinners, family events, kids parties and smart buffet across South Florida."
+      content="Private Event Catering in Miami by Chef Vladimir Yavlen. Michelin-style private chef dinners, family celebrations, kids parties and smart buffet across South Florida."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -15,290 +15,425 @@
         padding: 0;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        background: #020617;
         color: #e5e7eb;
       }
       a {
         text-decoration: none;
+        color: inherit;
+      }
+      .page {
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, #1d4ed8 0, transparent 60%),
+          radial-gradient(circle at bottom right, #f97316 0, transparent 55%),
+          #020617;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px 16px 40px;
+      }
+      /* HERO */
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 24px;
+        align-items: center;
+        padding-top: 16px;
+      }
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      .logo-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+      .logo-badge {
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-size: 11px;
+        color: #94a3b8;
+      }
+      .location-pill {
+        border-radius: 999px;
+        border: 1px solid rgba(52, 211, 153, 0.9);
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #bbf7d0;
+        background: rgba(15, 23, 42, 0.6);
+      }
+      h1 {
+        font-size: 32px;
+        line-height: 1.05;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 26px;
+        }
+      }
+      .subtitle {
+        font-size: 15px;
+        color: #c7d2fe;
+        margin-bottom: 6px;
+      }
+      .subnote {
+        font-size: 13px;
+        color: #9ca3af;
+        margin-bottom: 18px;
+      }
+      .highlight-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 18px;
+        font-size: 12px;
+      }
+      .highlight-pill {
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(15, 23, 42, 0.7);
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .btn-primary {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        border: none;
+        font-weight: 600;
+        font-size: 14px;
+        color: #022c22;
+      }
+      .btn-ghost {
+        padding: 10px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.9);
+        font-size: 14px;
+        background: rgba(15, 23, 42, 0.8);
+      }
+      .trust-text {
+        font-size: 11px;
+        color: #9ca3af;
+      }
+      /* HERO IMAGE CARD */
+      .hero-card {
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(15, 23, 42, 0.95);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      }
+      .hero-image {
+        position: relative;
+        height: 210px;
+        background-image: url("https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1000&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.92), transparent 65%);
+      }
+      .hero-image-text {
+        position: absolute;
+        left: 14px;
+        bottom: 12px;
+        right: 14px;
+        font-size: 13px;
+      }
+      .hero-image-tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #e5e7eb;
+        margin-bottom: 4px;
+      }
+      .hero-image-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .hero-card-body {
+        padding: 10px 14px 14px;
+        font-size: 13px;
+        color: #e5e7eb;
+      }
+      .hero-card-body-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+      .hero-chip {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+      }
+      /* FORMATS */
+      .section {
+        margin-top: 26px;
+      }
+      .section-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9ca3af;
+        margin-bottom: 10px;
+      }
+      .formats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (max-width: 900px) {
+        .formats-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 600px) {
+        .formats-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      .format-card {
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(15, 23, 42, 0.92);
+        padding: 10px 12px 12px;
+        font-size: 13px;
+      }
+      .format-title {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .format-note {
+        font-size: 12px;
+        color: #9ca3af;
+      }
+      /* GALLERY */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 8px;
+      }
+      @media (max-width: 700px) {
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .gallery-img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        height: 150px;
+      }
+      /* BOOKING */
+      .booking-box {
+        border-radius: 18px;
+        border: 1px dashed rgba(148, 163, 184, 0.7);
+        padding: 12px 14px 14px;
+        font-size: 13px;
+        background: rgba(15, 23, 42, 0.9);
+        margin-top: 6px;
+      }
+      .steps {
+        margin-top: 6px;
+        font-size: 13px;
+      }
+      .steps li {
+        margin-left: 18px;
+        margin-bottom: 3px;
+      }
+      /* FOOTER */
+      .footer {
+        margin-top: 16px;
+        font-size: 11px;
+        color: #64748b;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <div
-      style="
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px 16px;
-      "
-    >
-      <div
-        style="
-          max-width: 900px;
-          width: 100%;
-          background: radial-gradient(circle at top left, #1d4ed8, transparent 55%),
-            radial-gradient(circle at bottom right, #f97316, transparent 60%), #020617;
-          border-radius: 24px;
-          border: 1px solid rgba(148, 163, 184, 0.6);
-          box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-          padding: 24px 20px 28px;
-        "
-      >
-        <!-- Шапка -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-          "
-        >
-          <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em">
-            Private Event Catering
-          </div>
-          <div
-            style="
-              font-size: 11px;
-              padding: 4px 10px;
-              border-radius: 999px;
-              border: 1px solid rgba(52, 211, 153, 0.8);
-              color: #bbf7d0;
-            "
-          >
-            Miami · South Florida
-          </div>
-        </div>
-
+    <div class="page">
+      <div class="container">
         <!-- HERO -->
-        <h1 style="font-size: 26px; font-weight: 700; margin-bottom: 8px">
-          Private Event Catering Miami
-        </h1>
-        <p style="font-size: 15px; color: #cbd5f5; margin-bottom: 6px">
-          Michelin-style private chef dinners, family celebrations, kids parties and smart buffet by
-          Chef Vladimir Yavlen.
-        </p>
-        <p style="font-size: 13px; color: #9ca3af; margin-bottom: 18px">
-          We cook on-site, bring professional equipment and leave your kitchen perfectly clean.
-        </p>
-
-        <div
-          style="
-            display: grid;
-            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-            gap: 18px;
-          "
-        >
-          <!-- Левый блок — форматы -->
+        <section class="hero">
           <div>
-            <h2
-              style="
-                font-size: 13px;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: #9ca3af;
-                margin-bottom: 8px;
-              "
-            >
-              Formats
-            </h2>
-            <ul style="list-style: none; font-size: 14px">
-              <li style="margin-bottom: 4px">
-                • <span style="color: #a5b4fc">Private chef dinners</span> (2–20 guests)
-              </li>
-              <li style="margin-bottom: 4px">
-                • <span style="color: #a5b4fc">Family events & birthdays</span> (10–60 guests)
-              </li>
-              <li style="margin-bottom: 4px">
-                • <span style="color: #a5b4fc">Kids & teen parties</span> with healthy menu
-              </li>
-              <li>
-                • <span style="color: #a5b4fc">Smart buffet & corporate catering</span>
-              </li>
-            </ul>
-          </div>
+            <div class="logo-row">
+              <div class="logo-badge">Chef Vladimir Yavlen</div>
+              <div class="location-pill">Miami · South Florida</div>
+            </div>
+            <h1>Private Event Catering that feels like a Michelin dinner at home.</h1>
+            <p class="subtitle">
+              Private chef dinners, family celebrations, kids parties and smart buffet — cooked on-site
+              in your kitchen or venue.
+            </p>
+            <p class="subnote">
+              You host. We bring the restaurant: menu, products, equipment and flawless cleanup after
+              the event.
+            </p>
 
-          <!-- Правый блок — контакты и CTA -->
-          <div
-            style="
-              border-radius: 18px;
-              border: 1px solid rgba(148, 163, 184, 0.6);
-              background: rgba(15, 23, 42, 0.9);
-              padding: 12px 12px 14px;
-              font-size: 13px;
-            "
-          >
-            <div style="margin-bottom: 4px; color: #e5e7eb">
-              Available 7 days a week · Miami & South Florida
+            <div class="highlight-row">
+              <div class="highlight-pill">Dinners 2–20 guests</div>
+              <div class="highlight-pill">Events up to 60 guests</div>
+              <div class="highlight-pill">Healthy kids & teen menus</div>
+              <div class="highlight-pill">Miami · Aventura · Sunny Isles · Boca</div>
             </div>
 
-            <div style="font-size: 20px; font-weight: 600; margin-bottom: 2px">
-              +1 (754) 971-3012
-            </div>
-            <div style="color: #cbd5f5; margin-bottom: 10px">
-              Vladimir.Yavlen@icloud.com
-            </div>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <div class="cta-row">
+              <a class="btn-primary" href="tel:+17549713012">📞 Call now</a>
+              <a class="btn-ghost" href="https://wa.me/17546101359" target="_blank">💬 WhatsApp</a>
               <a
-                href="tel:+17549713012"
-                style="
-                  padding: 9px 14px;
-                  border-radius: 999px;
-                  background: #22c55e;
-                  color: #022c22;
-                  font-weight: 600;
-                  font-size: 14px;
-                "
-                >📞 Call now</a
-              >
-              <a
-                href="https://wa.me/17546101359"
-                target="_blank"
-                style="
-                  padding: 9px 14px;
-                  border-radius: 999px;
-                  border: 1px solid rgba(148, 163, 184, 0.8);
-                  color: #e5e7eb;
-                  font-size: 14px;
-                "
-                >💬 WhatsApp</a
-              >
-              <a
+                class="btn-ghost"
                 href="https://www.instagram.com/private_event_catering"
                 target="_blank"
-                style="
-                  padding: 9px 14px;
-                  border-radius: 999px;
-                  border: 1px solid rgba(148, 163, 184, 0.8);
-                  color: #e5e7eb;
-                  font-size: 14px;
-                "
                 >📸 Instagram</a
               >
             </div>
+            <div class="trust-text">
+              Send the date, location and number of guests — you’ll get 2–3 menu options and a detailed
+              quote the same day.
+            </div>
           </div>
-        </div>
 
-        <!-- Галерея фото -->
-        <div
-          style="
-            margin-top: 20px;
-            padding-top: 14px;
-            border-top: 1px dashed rgba(148, 163, 184, 0.6);
-          "
-        >
-          <h3
-            style="
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.1em;
-              color: #9ca3af;
-              margin-bottom: 8px;
-            "
-          >
-            Gallery
-          </h3>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(3, minmax(0, 1fr));
-              gap: 8px;
-            "
-          >
-            <!-- ЗАГЛУШКИ: сюда потом подставишь свои фото блюд -->
+          <!-- VISUAL CARD -->
+          <div class="hero-card">
+            <div class="hero-image">
+              <div class="hero-overlay"></div>
+              <div class="hero-image-text">
+                <div class="hero-image-tag">Signature experience</div>
+                <div class="hero-image-title">Tasting menu cooked live in your home.</div>
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <div class="hero-card-body-row">
+                <div>Miami-based private chef with 15+ years of experience in hotels and private homes.</div>
+              </div>
+              <div class="hero-card-body-row">
+                <div class="hero-chip">Plated dinners</div>
+                <div class="hero-chip">Family-style sharing</div>
+                <div class="hero-chip">Kids & teen parties</div>
+              </div>
+              <div style="margin-top: 6px; font-size: 12px; color: #9ca3af">
+                Email: <strong>private.event.catering13@gmail.com</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FORMATS -->
+        <section class="section">
+          <div class="section-title">Formats</div>
+          <div class="formats-grid">
+            <div class="format-card">
+              <div class="format-title">Private chef dinners</div>
+              <div class="format-note">
+                Tasting or family-style menu for 2–20 guests. Ideal for birthdays, anniversaries and
+                intimate celebrations.
+              </div>
+            </div>
+            <div class="format-card">
+              <div class="format-title">Family events & holidays</div>
+              <div class="format-note">
+                Relax with your guests while we handle shopping, cooking, service and cleanup — like a
+                restaurant inside your home.
+              </div>
+            </div>
+            <div class="format-card">
+              <div class="format-title">Kids & teen parties</div>
+              <div class="format-note">
+                “Wow!” menu for children: bright, fun and still healthy. We can involve kids in
+                cooking as a mini master-class.
+              </div>
+            </div>
+            <div class="format-card">
+              <div class="format-title">Smart buffet</div>
+              <div class="format-note">
+                Elegant buffet for 20–60 guests: bite-size hot and cold options, grazing tables,
+                dessert station.
+              </div>
+            </div>
+            <div class="format-card">
+              <div class="format-title">Brunches & pool parties</div>
+              <div class="format-note">
+                Light summer menus, seafood, ceviche, sliders, bowls — perfect for poolside and
+                outdoor gatherings.
+              </div>
+            </div>
+            <div class="format-card">
+              <div class="format-title">Corporate & VIP</div>
+              <div class="format-note">
+                Small corporate events, VIP clients, yacht charters. Discreet service and restaurant
+                quality plating.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="section">
+          <div class="section-title">Visual taste</div>
+          <div class="gallery-grid">
             <img
-              src="https://via.placeholder.com/400x260?text=Your+dish+photo+1"
-              alt="Catering dish"
-              style="width: 100%; border-radius: 10px; object-fit: cover"
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80"
+              alt="Fine dining dish"
             />
             <img
-              src="https://via.placeholder.com/400x260?text=Your+dish+photo+2"
-              alt="Catering dish"
-              style="width: 100%; border-radius: 10px; object-fit: cover"
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=80"
+              alt="Buffet catering"
             />
             <img
-              src="https://via.placeholder.com/400x260?text=Your+event+photo"
-              alt="Event"
-              style="width: 100%; border-radius: 10px; object-fit: cover"
+              class="gallery-img"
+              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=80"
+              alt="Chef plating"
             />
           </div>
           <p style="font-size: 12px; color: #9ca3af; margin-top: 6px">
-            Replace these placeholder photos with your real catering images.
+            Replace these sample photos later with your own event pictures for maximum impact.
           </p>
-        </div>
+        </section>
 
-        <!-- Видео-блок -->
-        <div style="margin-top: 18px">
-          <h3
-            style="
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.1em;
-              color: #9ca3af;
-              margin-bottom: 8px;
-            "
-          >
-            Video
-          </h3>
-          <div
-            style="
-              position: relative;
-              padding-bottom: 56.25%;
-              height: 0;
-              overflow: hidden;
-              border-radius: 14px;
-              border: 1px solid rgba(148, 163, 184, 0.6);
-            "
-          >
-            <!-- ЗДЕСЬ НУЖНО БУДЕТ ВСТАВИТЬ СВОЁ ВИДЕО С YOUTUBE -->
-            <iframe
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Catering video"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-              "
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
+        <!-- BOOKING -->
+        <section class="section">
+          <div class="section-title">Booking</div>
+          <div class="booking-box">
+            <div>
+              To get a proposal, send a short message via WhatsApp, call or email with:
+            </div>
+            <ul class="steps">
+              <li>Date and start time</li>
+              <li>Address / city</li>
+              <li>Number of adults and kids</li>
+              <li>Occasion (birthday, family dinner, corporate, kids party, etc.)</li>
+              <li>Any dietary preferences or “no go” products</li>
+            </ul>
+            <div style="margin-top: 6px">
+              You’ll receive 2–3 menu ideas, price per person, total estimate and service details.
+            </div>
           </div>
-          <p style="font-size: 12px; color: #9ca3af; margin-top: 6px">
-            Replace <strong>VIDEO_ID</strong> with your YouTube video ID (for example:
-            https://www.youtube.com/watch?v=<strong>VIDEO_ID</strong>).
-          </p>
-        </div>
+        </section>
 
-        <!-- Блок: как забронировать -->
-        <div
-          style="
-            margin-top: 18px;
-            padding-top: 14px;
-            border-top: 1px dashed rgba(148, 163, 184, 0.6);
-            font-size: 13px;
-            color: #d1d5db;
-          "
-        >
-          <h3
-            style="
-              font-size: 13px;
-              text-transform: uppercase;
-              letter-spacing: 0.1em;
-              color: #9ca3af;
-              margin-bottom: 6px;
-            "
-          >
-            Booking
-          </h3>
-          <p style="margin-bottom: 4px">
-            Send the date, location, number of guests and format of your event.
-          </p>
-          <p>We'll suggest 2–3 menu options and estimate the budget the same day.</p>
+        <div class="footer">
+          Private Event Catering Miami · Chef Vladimir Yavlen · Phone: +1 (754) 971-3012 · WhatsApp:
+          +1 (754) 610-1359 · Email: private.event.catering13@gmail.com
         </div>
       </div>
     </div>
