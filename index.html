@@ -5,635 +5,705 @@
     <title>Private Event Catering Miami | Chef Vladimir Yavlen</title>
     <meta
       name="description"
-      content="Private Event Catering in Miami by Chef Vladimir Yavlen. Michelin-style private chef dinners, weddings, family events, kids parties and smart buffet across South Florida."
+      content="Private Event Catering in Miami by Chef Vladimir Yavlen. Michelin-style private chef dinners, weddings up to 200 guests, kids parties and smart buffet across South Florida."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: radial-gradient(circle at top left, #020617 0, #0b1120 35%, #020617 100%);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          sans-serif;
+        background: radial-gradient(circle at top, #1d4ed8 0, #020617 45%, #020617 100%);
         color: #e5e7eb;
+        min-height: 100vh;
+      }
+
+      /* лёгкая анимация фона */
+      .bg-animated {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.18), transparent 55%),
+          radial-gradient(circle at 100% 100%, rgba(249, 115, 22, 0.16), transparent 55%),
+          radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.22), transparent 55%),
+          #020617;
+        filter: blur(0.2px);
+        animation: float-bg 18s ease-in-out infinite alternate;
+      }
+
+      @keyframes float-bg {
+        0% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(-10px, 8px, 0) scale(1.03);
+        }
+        100% {
+          transform: translate3d(8px, -6px, 0) scale(1.02);
+        }
       }
 
       a {
         text-decoration: none;
-        color: inherit;
       }
 
-      .page {
+      .page-wrap {
         min-height: 100vh;
         display: flex;
+        align-items: center;
         justify-content: center;
-        padding: 24px 12px 40px;
+        padding: 32px 16px;
       }
 
-      .card {
-        width: 100%;
+      .card-main {
         max-width: 900px;
+        width: 100%;
+        background:
+          radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 55%),
+          radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.28), transparent 60%),
+          #020617;
         border-radius: 28px;
         border: 1px solid rgba(148, 163, 184, 0.7);
-        background:
-          radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 55%),
-          radial-gradient(circle at bottom right, rgba(251, 146, 60, 0.3), transparent 60%),
-          #020617;
-        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
-        overflow: hidden;
+        box-shadow: 0 26px 70px rgba(15, 23, 42, 0.9);
+        padding: 22px 20px 26px;
+        backdrop-filter: blur(20px);
       }
 
-      .inner {
-        padding: 20px 18px 22px;
-      }
-
-      .top-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 14px;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: #9ca3af;
-      }
-
-      .badge-region {
-        padding: 5px 11px;
-        border-radius: 999px;
-        border: 1px solid rgba(34, 197, 94, 0.8);
-        background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.4), rgba(22, 163, 74, 0.3));
-        color: #bbf7d0;
-        font-size: 11px;
-        white-space: nowrap;
-      }
-
-      h1 {
-        font-size: 24px;
-        line-height: 1.2;
-        margin-bottom: 8px;
-      }
-
-      .subtitle-main {
-        font-size: 14px;
-        color: #c7d2fe;
-        margin-bottom: 4px;
-      }
-
-      .subtitle-muted {
-        font-size: 13px;
-        color: #9ca3af;
-        margin-bottom: 14px;
-      }
-
-      .chip-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-bottom: 14px;
-      }
-
-      .chip {
-        font-size: 11px;
-        border-radius: 999px;
-        padding: 6px 10px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        background: rgba(15, 23, 42, 0.85);
-        color: #e5e7eb;
-      }
-
-      /* CTA блок */
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-
-      .btn-main {
-        flex: 1 1 120px;
-        text-align: center;
-        padding: 10px 12px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #22c55e, #16a34a);
-        color: #022c22;
-        font-weight: 600;
-        font-size: 14px;
-        box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6);
-      }
-
-      .btn-ghost {
-        flex: 1 1 120px;
-        text-align: center;
-        padding: 10px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.8);
-        font-size: 14px;
-        background: rgba(15, 23, 42, 0.9);
-      }
-
-      .btn-instagram {
-        flex: 1 1 100%;
-        text-align: center;
-        padding: 9px 12px;
-        border-radius: 999px;
-        border: 1px solid rgba(248, 250, 252, 0.4);
-        font-size: 13px;
-        background: radial-gradient(circle at top left, rgba(244, 114, 182, 0.4), rgba(59, 130, 246, 0.3));
-        margin-bottom: 10px;
-      }
-
-      .hero-footer {
-        font-size: 12px;
-        color: #9ca3af;
-        margin-bottom: 16px;
-      }
-
-      /* Блок с фото и опытом */
-      .experience {
-        display: grid;
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-        gap: 14px;
-        margin-bottom: 18px;
-      }
-
-      .photo-card {
-        border-radius: 22px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        overflow: hidden;
-        position: relative;
-        min-height: 180px;
-        background:
-          linear-gradient(
-            to bottom right,
-            rgba(15, 23, 42, 0.7),
-            rgba(30, 64, 175, 0.9)
-          ),
-          url("/images/images/chef-hero.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .photo-gradient {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent 55%);
-      }
-
-      .photo-text {
-        position: absolute;
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        font-size: 13px;
-      }
-
-      .photo-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-        color: #9ca3af;
-        margin-bottom: 4px;
-      }
-
-      .photo-title {
-        font-size: 14px;
-        font-weight: 600;
-      }
-
-      .experience-card {
-        border-radius: 22px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        padding: 12px 12px 14px;
-        background: rgba(15, 23, 42, 0.9);
-        font-size: 12px;
-      }
-
-      .experience-title {
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 6px;
-      }
-
-      .experience-main {
-        font-size: 14px;
-        margin-bottom: 4px;
-      }
-
-      .experience-list {
-        margin-top: 6px;
-        list-style: none;
-      }
-
-      .experience-list li {
-        margin-bottom: 2px;
-      }
-
-      /* Formats */
-      .section-title {
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 10px;
-      }
-
-      .formats {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-
-      .format-card {
-        border-radius: 20px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        padding: 11px 12px 12px;
-        background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.4), rgba(15, 23, 42, 0.95));
-        font-size: 12px;
-      }
-
-      .format-label {
-        font-size: 10px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: #9ca3af;
-        margin-bottom: 2px;
-      }
-
-      .format-title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 4px;
-      }
-
-      .format-text {
-        font-size: 12px;
-        color: #e5e7eb;
-        margin-bottom: 3px;
-      }
-
-      .format-note {
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      /* Галерея */
-      .gallery-title-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 10px;
-        margin-bottom: 8px;
-      }
-
-      .gallery-title {
-        font-size: 11px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #9ca3af;
-      }
-
-      .gallery-hint {
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      .gallery-scroll {
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .gallery-card {
-        flex: 0 0 220px;
-        border-radius: 22px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        background: rgba(15, 23, 42, 0.95);
-        overflow: hidden;
-        font-size: 12px;
-      }
-
-      .gallery-img-wrap {
-        position: relative;
-        width: 100%;
-        padding-top: 65%;
-        overflow: hidden;
-      }
-
-      .gallery-img-wrap img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .gallery-caption {
-        padding: 8px 10px 10px;
-      }
-
-      .gallery-caption-title {
-        font-size: 13px;
-        margin-bottom: 2px;
-      }
-
-      .gallery-caption-text {
-        font-size: 11px;
-        color: #9ca3af;
-      }
-
-      /* Низ страницы */
-      .footer {
-        margin-top: 18px;
-        font-size: 11px;
-        color: #9ca3af;
-        text-align: center;
-      }
-
-      .footer strong {
-        color: #e5e7eb;
-        font-weight: 500;
-      }
-
-      @media (min-width: 720px) {
-        .inner {
-          padding: 24px 26px 28px;
-        }
-        h1 {
-          font-size: 30px;
-        }
-        .subtitle-main {
-          font-size: 15px;
-        }
-        .subtitle-muted {
-          font-size: 14px;
+      @media (min-width: 768px) {
+        .card-main {
+          padding: 26px 28px 30px;
         }
       }
     </style>
   </head>
-
   <body>
-    <div class="page">
-      <main class="card">
-        <div class="inner">
-          <!-- Верх -->
-          <header class="top-row">
-            <div>Chef Vladimir Yavlen</div>
-            <div class="badge-region">Miami · South Florida</div>
-          </header>
+    <div class="bg-animated"></div>
 
-          <section>
-            <h1>Private Event Catering that feels like a Michelin dinner at home.</h1>
-            <p class="subtitle-main">
-              Private chef dinners, weddings, family celebrations, kids parties and smart buffet —
-              cooked on-site in your kitchen or venue.
-            </p>
-            <p class="subtitle-muted">
-              You host. We bring the restaurant: menu, products, equipment and flawless cleanup after
-              the event.
-            </p>
-
-            <div class="chip-row">
-              <div class="chip">Dinners 2–20 guests</div>
-              <div class="chip">Events & weddings up to 200 guests</div>
-              <div class="chip">Healthy kids & teen menus</div>
-              <div class="chip">Miami · Aventura · Sunny Isles · Boca</div>
-            </div>
-
-            <div class="cta-row">
-              <a class="btn-main" href="tel:+17549713012">📞 Call now</a>
-              <a class="btn-ghost" href="https://wa.me/17546101359" target="_blank">💬 WhatsApp</a>
-            </div>
-
-            <a
-              class="btn-instagram"
-              href="https://www.instagram.com/private_event_catering?igsh=MTUxajVsdzd0cnp5Yg=="
-              target="_blank"
+    <div class="page-wrap">
+      <main class="card-main">
+        <!-- HEADER BADGE -->
+        <header
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+          "
+        >
+          <div>
+            <div
+              style="
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 0.16em;
+                color: #9ca3af;
+                margin-bottom: 2px;
+              "
             >
-              📸 Instagram · @private_event_catering
-            </a>
-
-            <p class="hero-footer">
-              Send the date, location and number of guests — you’ll get 2–3 menu options and a
-              detailed quote the same day.
-            </p>
-          </section>
-
-          <!-- Блок с фото + опытом -->
-          <section class="experience">
-            <div class="photo-card">
-              <div class="photo-gradient"></div>
-              <div class="photo-text">
-                <div class="photo-label">Signature experience</div>
-                <div class="photo-title">
-                  Tasting menu cooked live<br />
-                  for you and your guests.
-                </div>
-              </div>
+              Chef Vladimir Yavlen
             </div>
+            <div style="font-size: 13px; color: #e5e7eb">
+              Private Event Catering in Miami &amp; South Florida
+            </div>
+          </div>
+          <div
+            style="
+              font-size: 11px;
+              padding: 5px 12px;
+              border-radius: 999px;
+              border: 1px solid rgba(52, 211, 153, 0.8);
+              color: #bbf7d0;
+              background: radial-gradient(circle at top left, #22c55e33, #064e3b 80%);
+              box-shadow: 0 0 22px rgba(34, 197, 94, 0.45);
+              white-space: nowrap;
+            "
+          >
+            Miami · South Florida
+          </div>
+        </header>
 
-            <aside class="experience-card">
-              <div class="experience-title">About chef</div>
-              <div class="experience-main">
-                Miami-based private chef with 15+ years of experience in hotels and private homes
-                across the world.
-              </div>
-              <ul class="experience-list">
-                <li>• Plated tasting menus</li>
-                <li>• Family-style sharing</li>
-                <li>• Kids & teen parties</li>
-                <li>• Smart buffet & live stations</li>
-              </ul>
-              <div style="margin-top: 8px">
-                Email:
-                <a href="mailto:private.event.catering13@gmail.com"
-                  >private.event.catering13@gmail.com</a
+        <!-- HERO -->
+        <section style="margin-bottom: 18px">
+          <h1
+            style="
+              font-size: 26px;
+              line-height: 1.15;
+              font-weight: 700;
+              margin-bottom: 8px;
+            "
+          >
+            Private Event Catering that feels like a Michelin dinner at home.
+          </h1>
+          <p style="font-size: 15px; color: #cbd5f5; margin-bottom: 6px">
+            Private chef dinners, weddings, family celebrations, kids parties and
+            smart buffet — cooked on-site in your kitchen or venue.
+          </p>
+          <p style="font-size: 13px; color: #9ca3af; margin-bottom: 16px">
+            We handle the menu, products, equipment, service and flawless
+            cleanup after the event.
+          </p>
+
+          <!-- HERO TAGS -->
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+              margin-bottom: 16px;
+              font-size: 12px;
+            "
+          >
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                background: rgba(15, 23, 42, 0.9);
+              "
+            >
+              Dinners 2–20 guests
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                background: rgba(15, 23, 42, 0.9);
+              "
+            >
+              Events &amp; weddings up to 200 guests
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                background: rgba(15, 23, 42, 0.9);
+              "
+            >
+              Healthy kids &amp; teen menus
+            </div>
+            <div
+              style="
+                padding: 6px 12px;
+                border-radius: 999px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                background: rgba(15, 23, 42, 0.9);
+              "
+            >
+              Miami · Aventura · Sunny Isles · Boca
+            </div>
+          </div>
+
+          <!-- CTA + CONTACTS -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+              gap: 18px;
+              align-items: start;
+            "
+          >
+            <!-- Left: buttons -->
+            <div style="display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                <a
+                  href="tel:+17549713012"
+                  style="
+                    padding: 10px 18px;
+                    border-radius: 999px;
+                    background: linear-gradient(135deg, #16a34a, #22c55e);
+                    color: #022c22;
+                    font-weight: 600;
+                    font-size: 14px;
+                    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.55);
+                  "
+                  >📞 Call now</a
+                >
+                <a
+                  href="https://wa.me/17546101359"
+                  target="_blank"
+                  style="
+                    padding: 10px 18px;
+                    border-radius: 999px;
+                    border: 1px solid rgba(148, 163, 184, 0.9);
+                    color: #e5e7eb;
+                    font-size: 14px;
+                    background: rgba(15, 23, 42, 0.9);
+                  "
+                  >💬 WhatsApp</a
                 >
               </div>
+              <a
+                href="https://www.instagram.com/private_event_catering"
+                target="_blank"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  padding: 8px 14px;
+                  border-radius: 999px;
+                  border: 1px solid rgba(148, 163, 184, 0.7);
+                  color: #e5e7eb;
+                  font-size: 13px;
+                  background: radial-gradient(circle at top left, #4f46e533, #0f172a 70%);
+                "
+              >
+                📸 Instagram · @private_event_catering
+              </a>
+              <div style="font-size: 12px; color: #9ca3af">
+                Send the date, location and number of guests — you’ll get 2–3 menu
+                options and a detailed quote the same day.
+              </div>
+            </div>
+
+            <!-- Right: signature experience -->
+            <aside
+              style="
+                border-radius: 18px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                background: rgba(15, 23, 42, 0.9);
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  padding: 10px 12px 8px;
+                  border-bottom: 1px solid rgba(31, 41, 55, 1);
+                  font-size: 11px;
+                  letter-spacing: 0.16em;
+                  text-transform: uppercase;
+                  color: #9ca3af;
+                "
+              >
+                Signature experience
+              </div>
+              <div style="padding: 10px 12px 12px; font-size: 13px">
+                <div style="font-weight: 600; margin-bottom: 4px">
+                  Tasting menu cooked live for you and your guests.
+                </div>
+                <div style="color: #9ca3af; margin-bottom: 8px">
+                  Miami-based private chef with 15+ years of experience in
+                  hotels and private homes.
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 6px;
+                    font-size: 11px;
+                    margin-bottom: 10px;
+                  "
+                >
+                  <span
+                    style="
+                      padding: 5px 10px;
+                      border-radius: 999px;
+                      border: 1px solid rgba(148, 163, 184, 0.8);
+                    "
+                    >Plated tasting menus</span
+                  >
+                  <span
+                    style="
+                      padding: 5px 10px;
+                      border-radius: 999px;
+                      border: 1px solid rgba(148, 163, 184, 0.8);
+                    "
+                    >Family-style sharing</span
+                  >
+                  <span
+                    style="
+                      padding: 5px 10px;
+                      border-radius: 999px;
+                      border: 1px solid rgba(148, 163, 184, 0.8);
+                    "
+                    >Kids &amp; teen parties</span
+                  >
+                </div>
+                <div style="font-size: 12px">
+                  Email:
+                  <a
+                    href="mailto:private.event.catering13@gmail.com"
+                    style="color: #bfdbfe"
+                    >private.event.catering13@gmail.com</a
+                  >
+                </div>
+              </div>
             </aside>
-          </section>
+          </div>
+        </section>
 
-          <!-- Formats -->
-          <section>
-            <h2 class="section-title">Formats</h2>
+        <!-- FORMATS -->
+        <section style="margin-top: 20px">
+          <h2
+            style="
+              font-size: 12px;
+              text-transform: uppercase;
+              letter-spacing: 0.16em;
+              color: #9ca3af;
+              margin-bottom: 10px;
+            "
+          >
+            Formats
+          </h2>
 
-            <div class="formats">
-              <article class="format-card">
-                <div class="format-label">Dinners 2–20 guests</div>
-                <div class="format-title">Michelin-style private chef dinners</div>
-                <p class="format-text">
-                  Multi-course tasting menu or family-style sharing. Perfect for anniversaries,
-                  celebrations and VIP guests.
-                </p>
-                <p class="format-note">
-                  Wine-friendly menus, seasonal products, restaurant-level plating.
-                </p>
-              </article>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: minmax(0, 1fr);
+              gap: 12px;
+            "
+          >
+            <!-- Dinners -->
+            <article
+              style="
+                border-radius: 20px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                padding: 12px 14px 14px;
+                background: rgba(15, 23, 42, 0.96);
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.16em;
+                  color: #9ca3af;
+                  margin-bottom: 2px;
+                "
+              >
+                Dinners 2–20 guests
+              </div>
+              <h3 style="font-size: 14px; margin-bottom: 4px">
+                Michelin-style private chef dinners
+              </h3>
+              <p style="font-size: 13px; color: #d1d5db">
+                Multi-course tasting menu or family-style sharing. Perfect for
+                anniversaries, celebrations and VIP guests. Wine-friendly menus,
+                seasonal products, restaurant-level plating.
+              </p>
+            </article>
 
-              <article class="format-card">
-                <div class="format-label">Events & weddings</div>
-                <div class="format-title">Buffet & cocktail receptions</div>
-                <p class="format-text">
-                  Elegant canapés, live stations and grazing tables for weddings, engagements,
-                  corporate events and brand activations.
-                </p>
-                <p class="format-note">
-                  Up to <strong>200 guests</strong> · full menu planning & staffing support.
-                </p>
-              </article>
+            <!-- Events & Weddings -->
+            <article
+              style="
+                border-radius: 20px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                padding: 12px 14px 14px;
+                background: rgba(15, 23, 42, 0.96);
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.16em;
+                  color: #9ca3af;
+                  margin-bottom: 2px;
+                "
+              >
+                Events &amp; weddings
+              </div>
+              <h3 style="font-size: 14px; margin-bottom: 4px">
+                Buffet &amp; cocktail receptions
+              </h3>
+              <p style="font-size: 13px; color: #d1d5db">
+                Elegant canapés, live stations and grazing tables for weddings,
+                engagements, corporate events and brand activations. Up to 200
+                guests – full menu planning &amp; staffing support.
+              </p>
+            </article>
 
-              <article class="format-card">
-                <div class="format-label">Kids & family</div>
-                <div class="format-title">Healthy kids & teen parties</div>
-                <p class="format-text">
-                  Colorful, Instagram-worthy food that kids actually eat: balanced menus without
-                  heavy fast-food feeling.
-                </p>
-                <p class="format-note">
-                  Birthdays, pool parties, family weekends & camps.
-                </p>
-              </article>
+            <!-- Kids & Family -->
+            <article
+              style="
+                border-radius: 20px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                padding: 12px 14px 14px;
+                background: rgba(15, 23, 42, 0.96);
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.16em;
+                  color: #9ca3af;
+                  margin-bottom: 2px;
+                "
+              >
+                Kids &amp; family
+              </div>
+              <h3 style="font-size: 14px; margin-bottom: 4px">
+                Healthy kids &amp; teen parties
+              </h3>
+              <p style="font-size: 13px; color: #d1d5db">
+                Colorful, Instagram-worthy food that kids actually eat:
+                balanced menus without heavy fast-food feeling. Birthdays, pool
+                parties, family weekends &amp; camps.
+              </p>
+            </article>
 
-              <article class="format-card">
-                <div class="format-label">Smart buffet</div>
-                <div class="format-title">Light, fresh & beautiful catering</div>
-                <p class="format-text">
-                  Seasonal bowls, salads and appetizers with a focus on quality products and clean
-                  flavors — ideal for daytime events.
-                </p>
-                <p class="format-note">
-                  We leave your kitchen exactly as we found it. Sometimes cleaner.
-                </p>
-              </article>
+            <!-- Smart buffet -->
+            <article
+              style="
+                border-radius: 20px;
+                border: 1px solid rgba(148, 163, 184, 0.7);
+                padding: 12px 14px 16px;
+                background: rgba(15, 23, 42, 0.96);
+              "
+            >
+              <div
+                style="
+                  font-size: 11px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.16em;
+                  color: #9ca3af;
+                  margin-bottom: 2px;
+                "
+              >
+                Smart buffet
+              </div>
+              <h3 style="font-size: 14px; margin-bottom: 4px">
+                Light, fresh &amp; beautiful catering
+              </h3>
+              <p style="font-size: 13px; color: #d1d5db">
+                Seasonal bowls, salads and appetizers with a focus on quality
+                products and clean flavors — ideal for daytime events. We leave
+                your kitchen exactly as we found it. Sometimes cleaner.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- GALLERY · REAL EVENTS -->
+        <section style="margin-top: 26px">
+          <div
+            style="
+              border-radius: 24px;
+              border: 1px solid rgba(148, 163, 184, 0.6);
+              padding: 18px 18px 20px;
+              background: radial-gradient(circle at top left, #22c55e11, transparent 55%),
+                radial-gradient(circle at bottom right, #f9731611, transparent 60%), #020617;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 12px;
+                gap: 8px;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.16em;
+                    color: #9ca3af;
+                    margin-bottom: 4px;
+                  "
+                >
+                  Gallery · Real events by Chef Vladimir
+                </div>
+                <div style="font-size: 14px; color: #e5e7eb">
+                  Live events, real food, no stock photos.
+                </div>
+              </div>
+              <div style="font-size: 11px; color: #9ca3af; white-space: nowrap">
+                Scroll sideways to see more photos →
+              </div>
             </div>
-          </section>
 
-          <!-- Галерея -->
-          <section>
-            <div class="gallery-title-row">
-              <h2 class="gallery-title">Gallery · Real events by Chef Vladimir</h2>
-              <div class="gallery-hint">Scroll sideways to see more photos</div>
+            <div
+              style="
+                overflow-x: auto;
+                padding-bottom: 4px;
+                margin: 0 -4px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  min-width: 640px;
+                  padding: 0 4px;
+                "
+              >
+                <!-- CARD 1 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_0503.jpeg"
+                    alt="Chef Vladimir grilling at a private event in Miami"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Live grilling station
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      Outdoor events &amp; pool parties.
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <!-- CARD 2 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_0987.jpeg"
+                    alt="Private chef Vladimir at a house party event"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Chef at your event
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      House parties, anniversaries and VIP dinners.
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <!-- CARD 3 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_2404.png"
+                    alt="Canapés and signature appetizers by Chef Vladimir"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Elegant canapés
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      Bite-size details that guests photograph first.
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <!-- CARD 4 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_2406.png"
+                    alt="Smart buffet with colorful appetizers and vegetables"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Smart buffet setup
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      Beautiful and easy-to-eat buffet style.
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <!-- CARD 5 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_3066.jpeg"
+                    alt="Plated main course at a private dinner"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Plated main courses
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      Restaurant-level plating at home or your venue.
+                    </div>
+                  </figcaption>
+                </figure>
+
+                <!-- CARD 6 -->
+                <figure
+                  style="
+                    flex: 0 0 220px;
+                    border-radius: 20px;
+                    border: 1px solid rgba(148, 163, 184, 0.7);
+                    background: #020617;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="/images/images/IMG_5737.jpeg"
+                    alt="Colorful buffet and finger food by Private Event Catering Miami"
+                    style="width: 100%; height: 180px; object-fit: cover"
+                  />
+                  <figcaption style="padding: 10px 12px 12px">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 2px">
+                      Colorful buffet
+                    </div>
+                    <div style="font-size: 12px; color: #9ca3af">
+                      Mix of hot and cold dishes for bigger events.
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div class="gallery-scroll">
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-01.jpg" alt="Live grilling station" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Live grilling station</div>
-                  <div class="gallery-caption-text">Outdoor events & pool parties.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-02.jpg" alt="Chef Vladimir at event" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Chef Vladimir in action</div>
-                  <div class="gallery-caption-text">Restaurant-level service at your home.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-03.jpg" alt="Salmon canapés" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Signature canapés</div>
-                  <div class="gallery-caption-text">Elegant bites for welcome cocktails.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-04.jpg" alt="Duck & strawberry skewers" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Duck & strawberry skewers</div>
-                  <div class="gallery-caption-text">Sweet & savory combination.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-05.jpg" alt="Smart buffet setup" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Smart buffet setup</div>
-                  <div class="gallery-caption-text">Beautiful and easy to serve.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-06.jpg" alt="Warm salad bowls" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Warm salad bowls</div>
-                  <div class="gallery-caption-text">Healthy comfort food for big groups.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-07.jpg" alt="Plated main course" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Plated main course</div>
-                  <div class="gallery-caption-text">Restaurant-style presentation.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-08.jpg" alt="Fine details" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Fine details</div>
-                  <div class="gallery-caption-text">Table styling & atmosphere.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-09.jpg" alt="Chef's hands finishing dish" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Chef’s hands</div>
-                  <div class="gallery-caption-text">Attention to every plate.</div>
-                </div>
-              </article>
-
-              <article class="gallery-card">
-                <div class="gallery-img-wrap">
-                  <img src="/images/images/gallery-10.jpg" alt="Crab tartlets" />
-                </div>
-                <div class="gallery-caption">
-                  <div class="gallery-caption-title">Crab tartlets</div>
-                  <div class="gallery-caption-text">Perfect for champagne receptions.</div>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <footer class="footer">
-            Private Event Catering Miami · <strong>Chef Vladimir Yavlen</strong> · Available 7 days a
-            week in Miami &amp; South Florida.
-          </footer>
-        </div>
+        <!-- FOOTER -->
+        <footer
+          style="
+            margin-top: 18px;
+            font-size: 11px;
+            color: #9ca3af;
+            text-align: center;
+          "
+        >
+          Private Event Catering Miami · Chef Vladimir Yavlen · Available 7 days a
+          week in Miami &amp; South Florida.
+        </footer>
       </main>
     </div>
   </body>
