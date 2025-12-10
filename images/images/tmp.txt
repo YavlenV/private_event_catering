@@ -1,4 +1,4 @@
 <img
-  src="/images/gallery-01.jpg"
+src="/images/images/gallery-01.jpg"
   alt="Live grilling station by Chef Vladimir"
 />
