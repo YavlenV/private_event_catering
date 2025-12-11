@@ -693,11 +693,11 @@
                   </div>
                 </div>
                 <div class="signature-photo" aria-hidden="true">
-  <img
-    src="images/images/ShelbyHB-0349_Original.jpeg"
-    alt="Chef Yavlen at a private event"
-  />
-</div>
+                  <img
+                    src="images/images/ShelbyHB-0349_Original.jpeg"
+                    alt="Chef Yavlen at a private event"
+                  />
+                </div>
               </div>
             </div>
 
@@ -865,11 +865,11 @@
 
             <!-- FORM (Web3Forms) -->
             <form action="https://api.web3forms.com/submit" method="POST">
-              <!-- IMPORTANT: replace YOUR_ACCESS_KEY with your key from web3forms.com -->
+              <!-- Реальный access_key из Web3Forms -->
               <input
                 type="hidden"
                 name="access_key"
-                value="YOUR_ACCESS_KEY"
+                value="eb1a7834-448c-47d3-aaf4-364e4457201b"
               />
               <input
                 type="hidden"
@@ -880,6 +880,12 @@
                 type="hidden"
                 name="from_name"
                 value="Chef Yavlen Website"
+              />
+              <!-- Страница, на которую попадёт клиент после успешной отправки -->
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://chefyavlen.com/thank-you.html"
               />
 
               <div class="field">
@@ -950,7 +956,7 @@
 
               <div class="field">
                 <label for="date">Event date</label>
-                <input id="date" type="date" name="date" />
+                <input id="date" type="date" name="date" lang="en-US" />
               </div>
 
               <div class="field">
